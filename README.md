@@ -1,5 +1,5 @@
 # CFE-EXAMEN
-API REST con SWAGGER con PYTHON Y FASTAPI con la libreria de PYDANTIC para validaciones. Metodos GET. PUT. POST. PATCH. DELETE. CON HTTP DE RESPUESTA: 200- 201- 400 - 404 - 422 - 500 
+API REST con SWAGGER con PYTHON Y FASTAPI con la libreria de PYDANTIC para validaciones. Metodos GET. PUT. POST. PATCH. DELETE. CON HTTP DE RESPUESTA: 200- 201- 400 - 404 - 422 
 
 Previamente se necesita tener instalado PYTHON desde la pagina oficial o microsoft store con la casilla "Add Python to PATH"
 y con la version mas actual la cual se puede consultar desde el simbolo del sistema CMD con el comando:
