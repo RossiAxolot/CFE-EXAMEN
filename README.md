@@ -5,6 +5,14 @@ Previamente se necesita tener instalado PYTHON desde la pagina oficial o microso
 y con la version mas actual la cual se puede consultar desde el simbolo del sistema CMD con el comando:
 python --version
 
+Para el entorno virtual se creo con el siguiente comando:
+python -m venv .venv
+
+Para activar el entorno virtual
+.\.venv\Scripts\Activate.ps1
+
+Para instalar las dependencias desde el archivo requirements.txt
+pip install -r requirements.txt
 
 Para instalar las dependencias necesarias en el entorno:
 pip install fastapi uvicorn pydantic
