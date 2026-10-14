@@ -38,4 +38,4 @@ app = FastAPI(
 
 --reload es el que activa el reinicio automatico cada vez que se guarda un cambio en el codigo entonces el servidor se reiniciara solo sin que tengamos que prender y apagar de forma manual
 
-Para visualizar por medio de Swagger se genera la documentacion interactiva gracias a Pydantic y FastApi se genera de forma automatica y para ver la API es por medio de http://127.0.0.1:8000/docs.
+Para visualizar por medio de Swagger UI se genera la documentacion interactiva por medio de http://127.0.0.1:8000/docs gracias a Pydantic y FastApi se genera de forma automatica y para ver la API es por medio de http://127.0.0.1:8000.
