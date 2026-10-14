@@ -28,10 +28,11 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-3. Instalar las dependencias:
+3. Instalar las dependencias en este caso el primero:
 
 ```bash
 pip install -r requirements.txt
+pip install fastapi uvicorn pydantic 
 ```
 
 4. Iniciar la aplicación desde la carpeta del proyecto:
