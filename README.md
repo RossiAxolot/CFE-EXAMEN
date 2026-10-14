@@ -1,0 +1,2 @@
+# CFE-EXAMEN
+API REST con SWAGGER con PYTHON Y FASTAPI con la libreria de PYDANTIC para validaciones. Metodos GET. PUT. POST. PATCH. DELETE. CON HTTP DE RESPUESTA: 200- 201- 400 - 404 - 422 - 500 
