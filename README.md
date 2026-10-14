@@ -1,41 +1,71 @@
-# CFE-EXAMEN
-API REST con SWAGGER con PYTHON Y FASTAPI con la libreria de PYDANTIC para validaciones. Metodos GET. PUT. POST. PATCH. DELETE. CON HTTP DE RESPUESTA: 200- 201- 400 - 404 - 422 
+# API CFE - Clientes y consumo de energía
 
-Previamente se necesita tener instalado PYTHON desde la pagina oficial o microsoft store con la casilla "Add Python to PATH"
-y con la version mas actual la cual se puede consultar desde el simbolo del sistema CMD con el comando:
+API REST con Swagger, desarrollada con Python y FastAPI, usando Pydantic para las validaciones.
+Materia Desarrollo Web, grupo 033.
+
+**Métodos HTTP:** GET, POST, PUT, PATCH, DELETE
+**Códigos de respuesta:** 200, 201, 400, 404, 422
+
+## Requisitos previos
+
+Tener instalado Python 3.10 o superior, desde la página oficial o la Microsoft Store, marcando la casilla "Add Python to PATH". La versión se consulta en CMD con:
+
+```bash
 python --version
+```
 
-Para el entorno virtual se creo con el siguiente comando:
+## Instalación y ejecución
+
+1. Crear el entorno virtual:
+
+```bash
 python -m venv .venv
+```
 
-Para activar el entorno virtual
-.\.venv\Scripts\Activate.ps1
+2. Activarlo (PowerShell en Windows):
 
-Para instalar las dependencias desde el archivo requirements.txt
+```bash
+.venv\Scripts\Activate.ps1
+```
+
+3. Instalar las dependencias:
+
+```bash
 pip install -r requirements.txt
+```
 
-Para instalar las dependencias necesarias en el entorno:
-pip install fastapi uvicorn pydantic
+4. Iniciar la aplicación desde la carpeta del proyecto:
 
-Para iniciar la aplicacion se ejecuta en la terminal del proyecto:
+```bash
 uvicorn main:app --reload
+```
 
-Donde:
-main es el nombre del archivo de Python. Puede llamarse de cualquier otra forma pero asi lo definimos nosotros
-app es el nombre de la variable que definimos dentro de nuestro codigo donde se creo la instancia de FastApi
+- `main` es el nombre del archivo de Python (`main.py`).
+- `app` es la variable donde se creó la instancia de FastAPI dentro del código.
+- `--reload` reinicia el servidor automáticamente cada vez que se guarda un cambio, sin tener que apagarlo y prenderlo a mano.
 
-app = FastAPI(
-    title="API CFE - Clientes y consumo de energia",
-    description=(
-        "API REST para administrar clientes, lecturas de consumo electrico (kWh) "
-        "y la tarifa actual de CFE. Los datos viven en memoria (listas de Python)."
-    ),
-    version="1.0.0",
-    docs_url="/docs",
-    redoc_url="/redoc",
-    openapi_url="/openapi.json",
-)
+## Documentación (Swagger)
 
---reload es el que activa el reinicio automatico cada vez que se guarda un cambio en el codigo entonces el servidor se reiniciara solo sin que tengamos que prender y apagar de forma manual
+Gracias a FastAPI y Pydantic, la documentación interactiva se genera automáticamente:
 
-Para visualizar por medio de Swagger UI se genera la documentacion interactiva por medio de http://127.0.0.1:8000/docs gracias a Pydantic y FastApi se genera de forma automatica y para ver la API es por medio de http://127.0.0.1:8000.
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
+
+## Endpoints
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/v1/api/clientes` | Consultar todos los clientes |
+| POST | `/v1/api/clientes` | Registrar un cliente |
+| PUT | `/v1/api/clientes/{id_cliente}` | Actualizar un cliente |
+| DELETE | `/v1/api/clientes/{id_cliente}` | Desactivar un cliente (active = false) |
+| POST | `/v1/api/consumos` | Registrar una lectura de consumo |
+| GET | `/v1/api/clientes/{id_cliente}/consumos` | Lecturas de un cliente |
+| GET | `/v1/api/consumos` | Reporte de consumos (filtro `fecha_inicio` y `fecha_fin`) |
+| PATCH | `/v1/api/consumos/{id_consumo}` | Actualizar una lectura |
+| GET | `/v1/api/tarifa` | Consultar la tarifa actual |
+| PUT | `/v1/api/tarifa` | Modificar la tarifa actual |
+
+## Nota
+
+Los datos se guardan en memoria (listas de Python), por lo que se pierden al reiniciar el servidor.
